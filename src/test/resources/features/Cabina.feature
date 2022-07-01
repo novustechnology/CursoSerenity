@@ -1,5 +1,6 @@
 Feature: Cabinas
 
+  @Cabinas
   Scenario: Mostrar mensaje cuando solo se ha seleccionado niños como pasajeros
     Given el usuario ingresa a la pagina de PeruRail
     And selecciono el destino, ruta, tren, mes_anio y dia
