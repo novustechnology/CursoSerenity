@@ -1,5 +1,6 @@
 package com.automation.web.page;
 
+import com.automation.utils.Util;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
@@ -8,6 +9,7 @@ import java.util.List;
 
 public class CabinasPage extends PageObject {
 
+    Util util;
 
     @FindBy(name = "selectRooms[suite]")
     private WebElementFacade tipoSuite;
@@ -44,7 +46,8 @@ public class CabinasPage extends PageObject {
                 webElementFacade = tipoBunk;
                 break;
         }
-        withAction().moveToElement(webElementFacade).perform();
+        util.scrollToElement(webElementFacade);
+        //withAction().moveToElement(webElementFacade).perform();
         assert webElementFacade != null;
         webElementFacade.selectByVisibleText(numeroCabinas);
     }
@@ -59,7 +62,8 @@ public class CabinasPage extends PageObject {
     }
 
     public void clickContinuar() {
-        withAction().moveToElement(btnContinuar).perform();
+        util.scrollToElement(btnContinuar);
+        //withAction().moveToElement(btnContinuar).perform();
         btnContinuar.click();
     }
 

@@ -1,5 +1,6 @@
 package com.automation.web.page;
 
+import net.serenitybdd.core.Serenity;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.pages.PageObject;
@@ -23,5 +24,6 @@ public class CalendarioPage extends PageObject {
             btnNext.click();
         }
         getDriver().findElement(By.xpath("//a[text()='" + diaSalida + "']")).click();
+        Serenity.takeScreenshot();
     }
 }
